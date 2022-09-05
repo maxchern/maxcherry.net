@@ -20,13 +20,32 @@
 	      h += 1;
 	  }
       }
+
+      var up = true;
+      function updateL() {
+	  if (up) {
+	      l += 1;
+	  } else {
+	      l -= 1;
+	  }
+
+	  if (l > 96) {
+	      up = false;
+	  }
+
+	  if (l < 88) {
+	      up = true;
+	  }
+	  
+      }
       
       function updateBg() {
 	  document.body.style.backgroundColor = "hsl(" + h + ", " + s + "%, " + l + "%)";
       }
 
-      var updateHueInterval = setInterval(updateH, 150);
-      var bg = setInterval(updateBg, 150);
+      var updateHInterval = setInterval(updateH, 150);
+      var updateLInterval = setInterval(updateL, 150);
+      var updateBgInterval = setInterval(updateBg, 150);
 
     </script>
   </head>
