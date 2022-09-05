@@ -10,27 +10,22 @@
     <script>
 
       var hue = 0;
-      function updateBg() {
+
+      function updateHue() {
 	  if (hue > 359) {
 	      hue = 0;
 	  } else {
 	      hue += 1;
 	  }
+      }
+      
+      function updateBg() {
 	  document.body.style.backgroundColor = "hsl(" + hue + ", 60%, 92%)";
       }
+
+      var updateHueInterval = setInterval(updateHue, 150);
       var bg = setInterval(updateBg, 150);
 
-      var hue2 = 0;
-      function updateBg2() {
-	  if (hue2 > 359) {
-	      hue2 = 0;
-	  } else {
-	      hue2 += 1;
-	  }
-	  document.body.style.backgroundColor = "hsl(" + hue2 + ", 60%, 92%)";
-      }
-      var bg2 = setInterval(updateBg2, 130);
-      
     </script>
   </head>
   <!--  <body style="background-color:#e5fffe; color:#ff1c99; margin:20px;"> -->
