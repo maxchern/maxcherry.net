@@ -9,21 +9,23 @@
     <meta charset="utf-8">
     <script>
 
-      var hue = 0;
-
-      function updateHue() {
-	  if (hue > 359) {
-	      hue = 0;
+      var h = 0;
+      var s = 60;
+      var l = 92;
+      
+      function updateH() {
+	  if (h > 359) {
+	      h = 0;
 	  } else {
-	      hue += 1;
+	      h += 1;
 	  }
       }
       
       function updateBg() {
-	  document.body.style.backgroundColor = "hsl(" + hue + ", 60%, 92%)";
+	  document.body.style.backgroundColor = "hsl(" + h + ", " + s + "%, " + l + "%)";
       }
 
-      var updateHueInterval = setInterval(updateHue, 150);
+      var updateHueInterval = setInterval(updateH, 150);
       var bg = setInterval(updateBg, 150);
 
     </script>
