@@ -9,7 +9,15 @@
     <meta charset="utf-8">
     <script>
 
-      alert("test");
+      var hue = 0;
+      function updateBg() {
+	  if (hue > 359) {
+	      hue = 0;
+	  } else {
+	      hue += 1;
+	  }
+      }
+      var bg = setInterval(updateBg, 1000);
       
     </script>
   </head>
