@@ -19,6 +19,17 @@
 	  document.body.style.backgroundColor = "hsl(" + hue + ", 60%, 92%)";
       }
       var bg = setInterval(updateBg, 150);
+
+      var hue2 = 0;
+      function updateBg2() {
+	  if (hue2 > 359) {
+	      hue2 = 0;
+	  } else {
+	      hue2 += 1;
+	  }
+	  document.body.style.backgroundColor = "hsl(" + hue2 + ", 60%, 92%)";
+      }
+      var bg2 = setInterval(updateBg2, 130);
       
     </script>
   </head>
